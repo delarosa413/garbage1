@@ -1,0 +1,10 @@
+CXXFLAGS=`fltk-config --cxxflags`
+LDFLAGS=`fltk-config --ldflags`
+TARGETS=main
+
+all: $(TARGETS)
+main: main.o circle.o pen.o
+	g++ $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+clean:
+	rm -f *.o $(TARGETS)
